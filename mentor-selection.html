@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Mentor - Student Achievement Management System</title>
+    <link rel="stylesheet" href="mentor.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Mentor</h2>
+        <form id="mentorForm">
+            <label for="mentor">Choose a mentor:</label>
+            <select id="mentor" required>
+                <option value="">Select a mentor</option>
+                <option value="mentor1">Mentor 1</option>
+                <option value="mentor2">Mentor 2</option>
+                <option value="mentor3">Mentor 3</option>
+                <option value="mentor4">Mentor 4</option>
+                <option value="mentor5">Mentor 5</option>
+                <option value="mentor6">Mentor 6</option>
+                <option value="mentor7">Mentor 7 </option>
+                <option value="mentor8">Mentor 8</option>
+                <option value="mentor9">Mentor 9</option>
+                <option value="mentor10">Mentor 10</option>
+                <option value="mentor11">Mentor 11</option>
+                
+            </select>
+            <button type="submit">Select Mentor</button>
+        </form>
+    </div>
+
+    <!-- JavaScript to handle form submission and redirection -->
+    <script>
+        document.getElementById('mentorForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission behavior
+
+            // Get the selected mentor
+            var selectedMentor = document.getElementById('mentor').value;
+
+            if (selectedMentor) {
+                // Redirect to the main page after mentor selection
+                window.location.href = 'student-dashboard.html';
+            } else {
+                alert('Please select a mentor.');
+            }
+        });
+    </script>
+</body>
+</html>

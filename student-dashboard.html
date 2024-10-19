@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Modules - Student Achievements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Navbar with College Information -->
+    <div class="navbar" style="display:flex; align-items: center; justify-content: space-between;">
+        <!-- Marquee for college name -->
+        <marquee class="college-name" behavior="scroll" direction="left" style="flex-grow: 1; text-align: center;">SANJIVANI GROUP OF INSTITUTES</marquee>
+        <!-- College logo on the right -->
+        <img src="slogo.png" alt="College Logo" class="college-logo" style="margin-right: 15px;">
+    </div>
+    
+    <!-- College details below the first navbar, not inside a div -->
+    <p class="college-details">(An Autonomous Institute) | Affiliated to Savitribai Phule Pune University | Accredited 'A' Grade by NAAC | Approved by AICTE | Accredited by NBA</p>
+
+    <!-- Second Navigation Bar (About, Contact, Feedback, Logout) -->
+    <nav class="secondary-navbar">
+         <ul style="list-style: none; display: flex; justify-content: center; padding: 0;">
+        <li style="margin: 0 15px;"><a href="about.html">About</a></li>
+        <li style="margin: 0 15px;"><a href="contact.html">Contact</a></li>
+        <li style="margin: 0 15px;"><a href="feedback.html">Feedback</a></li>
+        <li style="margin: 0 15px;"><a href="logout.html">Logout</a></li>
+    
+
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content with ERP Modules -->
+    <div id="main-content">
+        <h2>Student Achievement Modules</h2>
+
+        <!-- ERP Modules Section (Paired Modules) -->
+        <div class="modules-container">
+
+            <!-- First Pair: Certificate Module and Achievement Record Module -->
+            <div class="module-card">
+                <img src="certificate.png" alt="Certificate Module">
+                <h3>Certificate Module</h3>
+                <p>Students upload certificates, and mentors approve them.</p>
+                <button onclick="openCertificateModule()">Manage Certificates</button>
+            </div>
+
+            <div class="module-card">
+                <img src="achievement.jpg" alt="Achievement Module">
+                <h3>Achievement Record Module</h3>
+                <p>Upload and track academic and extracurricular achievements.</p>
+                <button onclick="openAchievementModule()">Track Achievements</button>
+            </div>
+
+            <!-- Second Pair: Mentor Feedback Module and Leaderboard Module -->
+            <div class="module-card">
+                <img src="mentor.png" alt="Mentor Feedback Module">
+                <h3>Mentor Feedback Module</h3>
+                <p>Mentors give feedback on students' progress and achievements.</p>
+                <button onclick="openFeedbackModule()">View Feedback</button>
+            </div>
+
+            <div class="module-card">
+                <img src="leader board.png" alt="Leaderboard Module">
+                <h3>Leaderboard Module</h3>
+                <p>View the top-performing students based on their achievements.</p>
+                <button onclick="openLeaderboardModule()">View Leaderboard</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>

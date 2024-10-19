@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Student Achievement Management System</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Signup</h2>
+        <form id="signupForm" method="POST" action="signup_process.php">
+            <label for="role">I am a:</label>
+            <select id="role" name="role" onchange="togglePRNField()" required>
+                <option value="student">Student</option>
+                <option value="mentor">Mentor</option>
+            </select>
+            
+            <div id="studentFields">
+                <label for="prn">PRN Number (For Students):</label>
+                <input type="text" id="prn" name="prn" placeholder="Enter your PRN">
+            </div>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Signup</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Approval</title>
+    <link rel="stylesheet" href="styphp.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Certificates Pending Approval</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Certificate</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Fetch certificates from the database where status is 'pending'
+                $conn = new mysqli("localhost", "root", "", "your_database");
+                $sql = "SELECT * FROM certificates WHERE status = 'pending'";
+                $result = $conn->query($sql);
+
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td><a href='uploads/".$row['file_name']."' target='_blank'>View Certificate</a></td>";
+                    echo "<td>".$row['description']."</td>";
+                    echo "<td>
+                        <form action='approve_certificate.php' method='POST'>
+                            <input type='hidden' name='certificate_id' value='".$row['id']."'>
+                            <button type='submit' name='action' value='approve'>Approve</button>
+                            <button type='submit' name='action' value='reject'>Reject</button>
+                        </form>
+                    </td>";
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
